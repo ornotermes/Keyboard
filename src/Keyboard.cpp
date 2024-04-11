@@ -52,11 +52,11 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     0x95, 0x06,                    //   REPORT_COUNT (6)
     0x75, 0x08,                    //   REPORT_SIZE (8)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
-    0x25, 0x73,                    //   LOGICAL_MAXIMUM (115)
+    0x25, 0xff,                    //   LOGICAL_MAXIMUM (255)
     0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
 
     0x19, 0x00,                    //   USAGE_MINIMUM (Reserved (no event indicated))
-    0x29, 0x73,                    //   USAGE_MAXIMUM (Keyboard Application)
+    0x29, 0xff,                    //   USAGE_MAXIMUM (Keyboard Application)
     0x81, 0x00,                    //   INPUT (Data,Ary,Abs)
     0xc0,                          // END_COLLECTION
 };
@@ -88,10 +88,11 @@ uint8_t USBPutChar(uint8_t c);
 // to the persistent key report and sends the report.  Because of the way
 // USB HID works, the host acts like the key remains pressed until we
 // call release(), releaseAll(), or otherwise clear the report and resend.
-size_t Keyboard_::press(uint8_t k)
+size_t Keyboard_::press(uint8_t k, uint8_t raw = 0)
 {
 	uint8_t i;
-	if (k >= 136) {			// it's a non-printing key (not a modifier)
+	if (raw > 0) {		//raw keycode. do nothing, just pass the keycode as it is. Raw codes: https://www.win.tue.nl/~aeb/linux/kbd/scancodes-14.html
+	} else if (k >= 136) {	// it's a non-printing key (not a modifier)
 		k = k - 136;
 	} else if (k >= 128) {	// it's a modifier key
 		_keyReport.modifiers |= (1<<(k-128));
@@ -131,6 +132,7 @@ size_t Keyboard_::press(uint8_t k)
 			return 0;
 		}
 	}
+
 	sendReport(&_keyReport);
 	return 1;
 }
@@ -138,10 +140,11 @@ size_t Keyboard_::press(uint8_t k)
 // release() takes the specified key out of the persistent key report and
 // sends the report.  This tells the OS the key is no longer pressed and that
 // it shouldn't be repeated any more.
-size_t Keyboard_::release(uint8_t k)
+size_t Keyboard_::release(uint8_t k, uint8_t raw=0)
 {
 	uint8_t i;
-	if (k >= 136) {			// it's a non-printing key (not a modifier)
+	if (raw > 0) {		//raw keycode. do nothing, just pass the keycode as it is
+	} else if (k >= 136) {	// it's a non-printing key (not a modifier)
 		k = k - 136;
 	} else if (k >= 128) {	// it's a modifier key
 		_keyReport.modifiers &= ~(1<<(k-128));
