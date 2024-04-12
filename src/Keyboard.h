@@ -110,6 +110,147 @@
 #define KEY_F23           0xFA
 #define KEY_F24           0xFB
 
+// Keys defined with raw scan codes
+//#define KEY_F13 104,1
+#define KEY_TOOLS 104,1 //Opens settings atleast on some Linux distros.
+//#define KEY_F14 105,1
+#define KEY_LAUNCH5 105,1
+//#define KEY_F15 106,1
+#define KEY_LAUNCH6 106,1
+//#define KEY_F16 107,1
+#define KEY_LAUNCH7 107,1
+//#define KEY_F17 108,1
+#define KEY_LAUNCH8 108,1
+//#define KEY_F18 109,1
+#define KEY_LAUNCH9 109,1
+//#define KEY_F19 110,1
+//110 is F19, NoSymbol on pop-os
+//#define KEY_F20 111,1
+#define KEY_MUTE_MIC 111,1
+//#define KEY_F21 112,1
+#define KEY_TOUCH_TOGGLE 112,1
+//#define KEY_F22 113,1
+#define KEY_TOUCH_ENABLE 113,1
+//#define KEY_F23 114,1
+#define KEY_TOUCH_DISABLE 114,1
+//#define KEY_F24 115,1
+//115 is F24, NoSymbol on pop-os
+
+#define KEY_EXECUTE 116,1
+#define KEY_HELP 117,1
+#define KEY_MENU 118,1
+#define KEY_SELECT 119,1
+#define KEY_STOP 120,1
+#define KEY_AGAIN 121,1
+#define KEY_UNDO 122,1
+#define KEY_CUT 123,1
+#define KEY_COPY 124,1
+#define KEY_PASTE 125,1
+#define KEY_FIND 126,1
+
+#define KEY_MUTE 127,1
+#define KEY_VOL_UP 128,1
+#define KEY_VOL_DOWN 129,1
+
+#define KEY_CAPS_LOCK 130,1
+#define KEY_NUM_LOCK 131,1
+#define KEY_SCROLL_LOCK 132,1
+
+#define KEY_KP_COMMA 133,1
+#define KEY_KP_EQUAL 134,1
+//135-143 INTERNATIONAL1-9
+//144-152 LANG1-9
+#define KEY_ALT_ERASE 153,1
+#define KEY_SYSREQ 154,1
+#define KEY_CANCEL 155,1
+#define KEY_CLEAR 156,1
+#define KEY_PRIOR 157,1
+#define KEY_RETURN 158,1
+#define KEY_SEPARATOR 159,1
+#define KEY_OUT 160,1
+#define KEY_OPER 161,1
+#define KEY_CLEAR_AGAIN 162,1
+#define KEY_CRSEL_PROPS 163,1
+#define KEY_EXSEL 164,1
+//165-175 Reserved
+#define KEY_KP_00 176,1
+#define KEY_KP_000 177,1
+#define KEY_SEP_THOUSAND 178,1
+#define KEY_SEP_DECIMAL 179,1
+#define KEY_CURRENCY_UNIT 180,1
+#define KEY_CURRENCY_SUB 181,1
+#define KEY_KP_PARENTHESIS_OPEN 182,1
+#define KEY_KP_PARENTHESIS_CLOSE 183,1
+#define KEY_KP_CURLY_BRACE_OPEN 184,1
+#define KEY_KP_CURLY_BRACE_CLOSE 185,1
+#define KEY_KP_TAB 186,1
+#define KEY_KP_BACKSPACE 187,1
+#define KEY_KP_A 188,1
+#define KEY_KP_B 189,1
+#define KEY_KP_C 190,1
+#define KEY_KP_D 191,1
+#define KEY_KP_E 192,1
+#define KEY_KP_F 193,1
+#define KEY_KP_XOR 194,1
+#define KEY_KP_CARET 195,1
+#define KEY_KP_EXPONENT 195,1
+#define KEY_KP_PERCENT 196,1
+#define KEY_KP_MODULUS 197,1
+#define KEY_KP_LESSTHAN 198,1
+#define KEY_KP_MORETHAN 199,1
+#define KEY_KP_AMPERSAND 200,1
+#define KEY_KP_BITWISE_AND 200,1
+#define KEY_KP_LOGIC_AND 201,1
+#define KEY_KP_BITWISE_OR 202,1
+#define KEY_KP_LOGIC_OR 202,1
+#define KEY_KP_COLON 203,1
+#define KEY_KP_OCTOTHORPE 204,1
+#define KEY_KP_HASH 204,1
+#define KEY_KP_SPACE 205,1
+#define KEY_KP_AT 206,1
+#define KEY_KP_EXCLAMATION 207,1
+#define KEY_KP_MEM_STORE 208,1
+#define KEY_KP_MEM_RECALL 209,1
+#define KEY_KP_MEM_CLEAR 210,1
+#define KEY_KP_MEM_ADD 211,1
+#define KEY_KP_MEM_SUBTRACT 212,1
+#define KEY_KP_MEM_MULTIPLY 213,1
+#define KEY_KP_MEM_DIVIDE 214,1
+#define KEY_KP_PLUS_MINUS 215,1
+#define KEY_KP_CLEAR 216,1
+#define KEY_KP_CLEAR_ENTRY 217,1
+#define KEY_KP_BINARY 218,1
+#define KEY_KP_OCTAL 219,1
+#define KEY_KP_DECIMAL 220,1
+#define KEY_KP_HEXADECIMAL 221,1
+//222-223 Reserved
+//224-231 Modifier keys
+#define KEY_MEDIA_PLAYPAUSE 232,1
+#define KEY_MEDIA_STOPCD 233,1
+#define KEY_MEDIA_NEXTSONG 234,1
+#define KEY_MEDIA_PREVIOUSSONG 235,1
+#define KEY_MEDIA_EJECTCD 236,1
+#define KEY_MEDIA_VOLUMEUP 237,1
+#define KEY_MEDIA_VOLUMEDOWN 238,1
+#define KEY_MEDIA_MUTE 239,1
+#define KET_MEDIA_WWW 240,1
+#define KEY_MEDIA_BACK 241,1
+#define KEY_MEDIA_FORWARRD 242,1
+#define KEY_MEDIA_STOP 243,1
+#define KEY_MEDIA_FIND 244,1
+#define KEY_MEDIA_SCROLLUP 245,1
+#define KEY_MEDIA_SCROLLDOWN 246,1
+#define KEY_MEDIA_EDIT 247,1
+#define KEY_MEDIA_SLEEP 248,1
+#define KEY_MEDIA_COFFEE 249,1
+#define KEY_MEDIA_REFRESH 250,1
+#define KEY_MEDIA_CALC 251,1
+
+#define KEY_CODE_252 252,1
+#define KEY_CODE_253 253,1
+#define KEY_CODE_254 254,1
+#define KEY_CODE_255 255,1
+
 // Supported keyboard layouts
 extern const uint8_t KeyboardLayout_de_DE[];
 extern const uint8_t KeyboardLayout_en_US[];
